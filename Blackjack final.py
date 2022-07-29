@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
-
 
 import random
 
@@ -14,9 +12,6 @@ values = {'Two':2, 'Three':3, 'Four':4, 'Five':5, 'Six':6, 'Seven':7, 'Eight':8,
 playing = True 
 
 
-# In[3]:
-
-
 class Card:
     
     def __init__(self,suit,rank):
@@ -25,9 +20,6 @@ class Card:
         
     def __str__(self):
         return self.rank+ " of "+ self.suit
-
-
-# In[4]:
 
 
 class Deck:
@@ -52,15 +44,9 @@ class Deck:
         return single_card
 
 
-# In[5]:
-
-
 test_deck = Deck()
 test_deck.shuffle()
 print(test_deck)
-
-
-# In[6]:
 
 
 class Hand:
@@ -87,16 +73,7 @@ class Hand:
         while self.value > 21 and self.aces:
             self.value -= 10
             self.aces -= 1
-            
 
-
-# In[ ]:
-
-
-
-
-
-# In[7]:
 
 
 test_deck = Deck()
@@ -110,20 +87,9 @@ print(pulled_card)
 test_player.add_card(pulled_card)
 print(test_player.value)
 
-
-# In[8]:
-
-
 test_player.add_card(test_deck.deal())
 
-
-# In[9]:
-
-
 test_player.value
-
-
-# In[10]:
 
 
 class Chips:
@@ -137,9 +103,6 @@ class Chips:
         
     def lose_bet(self):
         self.total -= self.bet
-
-
-# In[11]:
 
 
 def take_bet(chips):
@@ -157,8 +120,6 @@ def take_bet(chips):
                 break
 
 
-# In[12]:
-
 
 def hit(deck,hand):
     
@@ -166,8 +127,6 @@ def hit(deck,hand):
     hand.add_card(single_card)
     hand.adjust_for_ace()
 
-
-# In[13]:
 
 
 def hit_or_stand(deck,hand):
@@ -188,9 +147,6 @@ def hit_or_stand(deck,hand):
             continue 
         
         break
-
-
-# In[14]:
 
 
 def show_some(player,dealer):
@@ -225,10 +181,6 @@ def show_all(player,dealer):
         print(card)
     print(f"Value of Player's hand is: {player.value}")
         
-    
-
-
-# In[15]:
 
 
 def player_busts(player,dealer,chips):
@@ -249,9 +201,6 @@ def dealer_wins(player,dealer,chips):
 
 def push(player,dealer):
     print('Dealer and player tie! PUSH')
-
-
-# In[16]:
 
 
 while True:
@@ -327,8 +276,6 @@ while True:
         print('Thanks for your money!')
         break
 
-
-# In[ ]:
 
 
 
